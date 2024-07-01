@@ -1,3 +1,5 @@
+(comment) @comment
+
 [
   (addition)
   (new_file)
