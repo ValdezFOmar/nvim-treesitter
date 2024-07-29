@@ -78,3 +78,20 @@
           (block_scalar) @injection.content
           (#set! injection.language "promql")
           (#offset! @injection.content 0 1 0 0))))))
+
+; pre-commit files/exclude pattern
+(block_mapping_pair
+  key: (flow_node) @_files
+  (#any-of? @_files "files" "exclude")
+  value: (flow_node
+    (plain_scalar
+      (string_scalar) @injection.content)
+    (#set! injection.language "regex")))
+
+(block_mapping_pair
+  key: (flow_node) @_files
+  (#any-of? @_files "files" "exclude")
+  value: (block_node
+    (block_scalar) @injection.content
+    (#set! injection.language "regex")
+    (#offset! @injection.content 0 1 0 0)))
