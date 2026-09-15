@@ -349,6 +349,7 @@
   "extends"
   "get"
   "let"
+  "meta"
   "set"
   "static"
   "target"
